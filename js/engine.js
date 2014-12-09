@@ -110,9 +110,6 @@ $(document).ready(function() {
 		hidden_copy.canvas.width = trimWidth;
 		hidden_copy.canvas.height = trimHeight;
 		hidden_copy.putImageData(trimmed, 0, 0);
-
-		//Prepare download button
-		$('#download').attr('href', hidden_copy.canvas.toDataURL('image/png'));
 	}
 
 	function insert(src) {
@@ -254,9 +251,14 @@ $(document).ready(function() {
 	$('#download').on('click', function(e) {
 		e.preventDefault();
 		redrawHidden();
-		hidden_copy.canvas.toBlob(function(blob) {
-			saveAs(blob, "circle_it.png");
-		});
+		//Prepare download button
+		setTimeout(function(){
+			$('#download').attr('href', hidden_copy.canvas.toDataURL('image/png'));	
+				hidden_copy.canvas.toBlob(function(blob) {
+				saveAs(blob, "circle_it.png");
+			});
+		},100);
+		
 
 	});
 	var dropZone = document.getElementById('drop_zone');
