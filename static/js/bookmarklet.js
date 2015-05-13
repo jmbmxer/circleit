@@ -1,0 +1,1 @@
+javascript:(function()%7Bwindow.baseUrl%3D"%2F%2Fsaulify.me"%3Bvar e%3Ddocument.createElement("script")%3Be.setAttribute("type"%2C"text%2Fjavascript")%3Be.setAttribute("charset"%2C"UTF-8")%3Be.setAttribute("src"%2CbaseUrl%2B"%2Fstatic%2Fjs%2Fsaulify_browser.js")%3Bdocument.documentElement.appendChild(e)%7D)()
